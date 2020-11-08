@@ -131,16 +131,10 @@ if __name__ == "__main__":
         red_ball.digit_index += 1
         
     
-    ball = balls.arr[balls.head]
-    print(ball.numbers[ball.calculate_digit()], end='')
-    balls.head += 1
-    balls.head %= len(balls.arr)
-    
-    while balls.head != balls.tail:
-        ball = balls.arr[balls.head]
-        print(ball.numbers[ball.calculate_digit()], end='')
-        balls.head += 1
-        balls.head %= len(balls.arr)
+    while not balls.is_empty():
+        hold = balls.dequeue()
+        print(hold.numbers[hold.calculate_digit()], end='')
+
     print()
     
         
