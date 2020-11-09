@@ -169,15 +169,11 @@ public class Q3
 
 
         Ball ball;
-        do
+        while (!q.isEmpty())
         {
-            ball = q.arr[q.head];
+            ball = q.dequeue();
             System.out.print(ball.nums.get(ball.calculateDigit()));
-
-            q.head += 1;
-            q.head %= q.arr.length;
-            
-        }while(q.head != q.tail);
+        }
 
         System.out.println();
     }
